@@ -1,5 +1,8 @@
 if status is-interactive
 # Commands to run in interactive sessions can go here
+set -Ux LANG en_GB.UTF-8
+set -Ux LANGUAGE en_GB:en
+set -Ux LC_ALL en_GB.UTF-8
 # set -g -x fish_greeting 'Welcome to my server!'
 #atuin
 set -gx ATUIN_NOBIND "true"
@@ -31,6 +34,9 @@ abbr --add ltt eza -algT -s=modified --icons --group-directories-first
 #
 abbr --add aud "sudo apt update && apt list --upgradeable"
 abbr --add aug "sudo apt full-upgrade -y && sudo apt autoremove"
+abbr --add lzd lazydocker
+abbr --add dcu "docker compose up -d"'
+
 # replaces !! with the result of last_history_item Similar to !! bash history expansion 
 function last_history_item
     echo $history[1]
