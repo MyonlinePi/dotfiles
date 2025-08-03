@@ -36,6 +36,7 @@ abbr --add aud "sudo apt update && apt list --upgradeable"
 abbr --add aug "sudo apt full-upgrade -y && sudo apt autoremove"
 abbr --add lzd lazydocker
 abbr --add dcu "docker compose up -d"
+abbr --add dcs "dockcheck.sh -p -s"
 
 # replaces !! with the result of last_history_item Similar to !! bash history expansion 
 function last_history_item
