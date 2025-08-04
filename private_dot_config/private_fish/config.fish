@@ -1,4 +1,9 @@
 if status is-interactive
+#
+function fish_greeting
+    fastfetch
+end
+#
 # Commands to run in interactive sessions can go here
 set -Ux LANG en_GB.UTF-8
 set -Ux LANGUAGE en_GB:en
