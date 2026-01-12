@@ -26,7 +26,7 @@ bind -M insert \cr _atuin_search
 # Bind ctrl-r but not up arrow
 eval "$(atuin init fish --disable-up-arrow)"
 # zoxide
-zoxide init fish | source
+# zoxide init fish | source
 zoxide init --cmd cd fish | source
 # Set up fzf key bindings
 fzf --fish | source
