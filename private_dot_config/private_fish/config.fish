@@ -6,13 +6,14 @@ function fish_greeting
     fastfetch
 end
 #
-starship init fish | source
 # Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)" 
 eval set --global --export HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew";
 set --global --export HOMEBREW_CELLAR "/home/linuxbrew/.linuxbrew/Cellar";
 set --global --export HOMEBREW_REPOSITORY "/home/linuxbrew/.linuxbrew/Homebrew";
 fish_add_path --global --move --path "/home/linuxbrew/.linuxbrew/bin" "/home/linuxbrew/.linuxbrew/sbin";
+#
+starship init fish | source
 #
 set -Ux LANG en_GB.UTF-8
 set -Ux LANGUAGE en_GB:en
@@ -50,7 +51,7 @@ abbr --add aug "sudo apt full-upgrade -y && sudo apt autoremove"
 abbr --add lzd lazydocker
 abbr --add dcu "docker compose up -d"
 abbr --add dcs "dockcheck.sh -p -s"
-
+#
 # replaces !! with the result of last_history_item Similar to !! bash history expansion 
 function last_history_item
     echo $history[1]
