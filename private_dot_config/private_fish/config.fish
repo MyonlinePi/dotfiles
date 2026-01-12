@@ -1,11 +1,12 @@
 if status is-interactive
 #
+# Commands to run in interactive sessions can go here
+# set -g -x fish_greeting 'Welcome to my server!'
 function fish_greeting
     fastfetch
 end
 #
-# Commands to run in interactive sessions can go here
-#
+# Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)" 
 eval set --global --export HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew";
 set --global --export HOMEBREW_CELLAR "/home/linuxbrew/.linuxbrew/Cellar";
@@ -15,8 +16,7 @@ fish_add_path --global --move --path "/home/linuxbrew/.linuxbrew/bin" "/home/lin
 set -Ux LANG en_GB.UTF-8
 set -Ux LANGUAGE en_GB:en
 set -Ux LC_ALL en_GB.UTF-8
-# set -g -x fish_greeting 'Welcome to my server!'
-#atuin
+# Atuin
 set -gx ATUIN_NOBIND "true"
 atuin init fish | source
 # bind to ctrl-r in normal and insert mode, add any other bindings you want here too
@@ -56,22 +56,5 @@ function last_history_item
 end
 abbr -a !! --position anywhere --function last_history_item
 #
-#function yy
-#	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-#	yazi $argv --cwd-file="$tmp"
-#	if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-#		cd -- "$cwd"
-#	end
-#	rm -f -- "$tmp"
-#end
-#
 starship init fish | source
 end
-
-#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)" eval set --global --export HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew";
-#set --global --export HOMEBREW_CELLAR "/home/linuxbrew/.linuxbrew/Cellar";
-#set --global --export HOMEBREW_REPOSITORY "/home/linuxbrew/.linuxbrew/Homebrew";
-#fish_add_path --global --move --path "/home/linuxbrew/.linuxbrew/bin" "/home/linuxbrew/.linuxbrew/sbin";
-#if test -n "$MANPATH[1]"; set --global --export MANPATH '' $MANPATH; end;
-#if not contains "/home/linuxbrew/.linuxbrew/share/info" $INFOPATH; set --global --export INFOPATH "/home/linuxbrew/.linuxbrew/share/info" $INFOPATH; end;
-#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
