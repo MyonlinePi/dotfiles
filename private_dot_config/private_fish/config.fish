@@ -1,4 +1,4 @@
-#
+# v1.0
 # Commands to run in interactive sessions can go here
 if status is-interactive
 # set -g -x fish_greeting 'Welcome to my server!'
@@ -6,7 +6,7 @@ function fish_greeting
     fastfetch
 end
 #
-set --universal EDITOR /home/linuxbrew/.linuxbrew/bin/micro
+set -gx EDITOR micro
 # Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)" 
 eval set --global --export HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew";
